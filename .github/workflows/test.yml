@@ -1,0 +1,32 @@
+# Installs Transclip from this tap on GitHub's Apple Silicon Mac runner, the
+# way a new user would, then runs the formula's test and Homebrew's audit.
+name: Test the formula
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  install:
+    name: brew install, test and audit
+    runs-on: macos-latest
+    timeout-minutes: 40
+    steps:
+      - name: Install Transclip from this tap
+        run: brew install cjpowis/tap/transclip
+      - name: Check it runs with its dependencies
+        run: |
+          set -euo pipefail
+          transclip --version
+          transclip --help | head -n 3
+          yt-dlp --version
+          ffmpeg -hide_banner -version | head -n 1
+      - name: Homebrew's test and audit
+        run: |
+          set -euo pipefail
+          brew test cjpowis/tap/transclip
+          brew audit --strict --online cjpowis/tap/transclip
