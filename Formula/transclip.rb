@@ -6,8 +6,8 @@ class Transclip < Formula
   license "MIT"
 
   depends_on arch: :arm64
-  depends_on :macos
   depends_on "ffmpeg"
+  depends_on :macos
   depends_on "yt-dlp"
 
   def install
