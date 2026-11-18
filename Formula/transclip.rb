@@ -1,8 +1,8 @@
 class Transclip < Formula
   desc "YouTube transcripts straight to your clipboard, even over SSH"
   homepage "https://github.com/Cjpowis/transclip"
-  url "https://github.com/Cjpowis/transclip/releases/download/v0.1.0/transclip-0.1.0-aarch64-apple-darwin.tar.gz"
-  sha256 "76ba0f2b253c989b62f8274e5dcb24b5e058f76e70e05786c5944727621484d0"
+  url "https://github.com/Cjpowis/transclip/releases/download/v0.1.1/transclip-0.1.1-aarch64-apple-darwin.tar.gz"
+  sha256 "58d4952f5f4ef7b9b280ff9f4d9a19731b2ff9a656cabc304da077a7f9ec9424"
   license "MIT"
 
   depends_on arch: :arm64
